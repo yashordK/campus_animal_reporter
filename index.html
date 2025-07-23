@@ -52,6 +52,15 @@
             max-width: 90%;
             border-radius: 8px;
         }
+        
+        footer {
+
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #dd1e1e;
+            font-style: italic;
+            font-weight: bolder;
+        }
     </style>
 </head>
 
@@ -92,13 +101,23 @@
         style="width: 80%; border-radius: 6px; padding: 8px"></textarea>
     <br />
     <button onclick="sendToWhatsapp()">Send to Volunteer</button>
-    <img id="preview" src="" style="display: none" />
+    <!-- <img id="preview" src="" style="display: none" /> -->
 
+    <footer>
+        This is a Fully functional demonstration for animal reporting by Team Ethos<br />for Case Comp: Paws for a Cause
+    </footer>
+    
     <script>
         function sendToWhatsapp() {
             const caption = "I spotted a campus animal. Here is the location and picture of it" +
-                document.getElementById("caption").value + "\n";
-
+            document.getElementById("caption").value + "\n";
+            // if (document.getElementById("pictureCheck").checked) {
+            //     caption += "Picture: [Attached]\n";
+            // }
+            // else {
+            //     alert("Please check the picture checkbox if you have a picture to share. \nYou'll have too attach it in the whatsapp message in the next step.");
+            //     return;
+            // }
             if (!navigator.geolocation) {
                 alert("Geolocation is not supported by your browser");
                 return;
