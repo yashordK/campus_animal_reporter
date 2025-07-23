@@ -115,10 +115,7 @@
             const caption =
                 document.getElementById("caption").value ||
                 "I spotted an animal at the fest ground.";
-            if (!imageBlob) {
-                alert("Please upload an image first.");
-                return;
-            }
+
             if (!navigator.geolocation) {
                 alert("Geolocation is not supported by your browser");
                 return;
