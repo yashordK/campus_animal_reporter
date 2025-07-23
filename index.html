@@ -95,27 +95,9 @@
     <img id="preview" src="" style="display: none" />
 
     <script>
-        let imageBlob = null;
-        const input = document.getElementById("imageInput");
-        const preview = document.getElementById("preview");
-
-        input.addEventListener("change", async (event) => {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    preview.src = e.target.result;
-                    preview.style.display = "block";
-                };
-                reader.readAsDataURL(file);
-                imageBlob = file;
-            }
-        });
-
         function sendToWhatsapp() {
-            const caption =
-                document.getElementById("caption").value ||
-                "I spotted an animal at the fest ground.";
+            const caption = "I spotted a campus animal. Here is the location and picture of it" +
+                document.getElementById("caption").value + "\n";
 
             if (!navigator.geolocation) {
                 alert("Geolocation is not supported by your browser");
